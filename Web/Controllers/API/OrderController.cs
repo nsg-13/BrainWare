@@ -1,24 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+
+using BrainWare.Business;
+using BrainWare.Business.Entities;
 
 namespace Web.Controllers
 {
-    using System.Web.Mvc;
-    using Infrastructure;
-    using Models;
-
+    /// <summary>
+    /// Controller for the Orders.
+    /// </summary>
     public class OrderController : ApiController
     {
+        private OrderService orderService = new OrderService();
+
+        /// <summary>
+        /// Get orders for company
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<Order> GetOrders(int id = 1)
         {
-            var data = new OrderService();
-
-            return data.GetOrdersForCompany(id);
+            return orderService.GetOrdersForCompany(id);
         }
     }
 }

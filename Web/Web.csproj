@@ -136,7 +136,6 @@
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -175,9 +174,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Database.cs" />
-    <Compile Include="Infrastructure\OrderService.cs" />
-    <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +250,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrainWare.Business\BrainWare.Business.csproj">
+      <Project>{d0314726-496d-4812-beab-4b5d513188ff}</Project>
+      <Name>BrainWare.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BrainWare.Data\BrainWare.Data.csproj">
+      <Project>{67a0e18c-599c-4006-9173-e52a721b62eb}</Project>
+      <Name>BrainWare.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
